@@ -1,0 +1,41 @@
+Core Network Terms – Simple Guide
+
+This short guide explains some of the most important concepts in networking: NAT, ARP, MAC, IPv4, and IPv6.
+
+🔄 NAT (Network Address Translation)
+
+What it is: NAT is like a receptionist at an office. Your private network (home/office) uses internal IPs that the internet can’t see. NAT takes your internal IP and translates it to a public IP before sending data to the internet.
+Why we use it:
+✅ Saves IPv4 addresses
+✅ Hides internal devices for security
+Example: Your phone (192.168.1.10) wants to visit google.com. The router uses NAT to send the request using its public IP (e.g., 49.204.xx.xx). Google replies to the router, and the router knows which device to forward it to.
+📢 ARP (Address Resolution Protocol)
+
+What it is: ARP is like asking, “Hey, who has this IP address? Tell me your MAC!”
+Purpose: It finds the MAC address of a device when you only know its IP address.
+Example: Your computer wants to send data to 192.168.1.5. It broadcasts an ARP request. The device with that IP replies with its MAC address.
+🔑 MAC Address (Media Access Control)
+
+What it is: A MAC address is like your device’s fingerprint – a unique ID burned into the network card.
+Format: Usually looks like 00:1A:2B:3C:4D:5E.
+Role: Used within the local network to identify devices. Even if you change your IP, the MAC stays the same (unless spoofed).
+🌐 IPv4
+
+What it is: The 4th version of the Internet Protocol. It uses 32-bit addresses, which look like 192.168.1.1.
+Limitation: Only about 4.3 billion unique addresses, which is not enough for today’s internet.
+Fun fact: That’s why NAT became popular – to share one public IP among many devices.
+🌐 IPv6
+
+What it is: The next generation after IPv4. It uses 128-bit addresses, written like:
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+Advantages:
+✅ Huge number of addresses – more than we’ll ever need
+✅ Built-in security features
+✅ No need for NAT (in most cases)
+
+| Feature      | IPv4          | IPv6                       |
+| ------------ | ------------- | -------------------------- |
+| Address Size | 32-bit        | 128-bit                    |
+| Example      | 192.168.1.1   | 2001\:db8::1               |
+| Addresses    | \~4.3 billion | Almost infinite            |
+| NAT Needed?  | Yes (usually) | No (designed to avoid NAT) |
